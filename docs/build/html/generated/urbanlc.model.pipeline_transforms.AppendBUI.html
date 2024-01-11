@@ -1,0 +1,524 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+        <title>urbanlc.model.pipeline_transforms.AppendBUI - UrbanLC 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">UrbanLC 0.0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">UrbanLC 0.0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.utils.html">urbanlc.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.downloader.base.html">urbanlc.downloader.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.html">urbanlc.downloader.esa2021_downloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.html">urbanlc.downloader.landsat_downloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.metrics.html">urbanlc.analyze.metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.visualizer.html">urbanlc.analyze.visualizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.base.html">urbanlc.model.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.baseline.html">urbanlc.model.baseline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.deep_learning.html">urbanlc.model.deep_learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.download.html">urbanlc.model.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.train_utils.html">urbanlc.model.train_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.dataloader.html">urbanlc.model.dataloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.pipeline_transforms.html">urbanlc.model.pipeline_transforms</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="urbanlc-model-pipeline-transforms-appendbui">
+<h1>urbanlc.model.pipeline_transforms.AppendBUI<a class="headerlink" href="#urbanlc-model-pipeline-transforms-appendbui" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="urbanlc.model.pipeline_transforms.AppendBUI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">urbanlc.model.pipeline_transforms.</span></span><span class="sig-name descname"><span class="pre">AppendBUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#urbanlc.model.pipeline_transforms.AppendBUI" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the Built-Up Index (BUI) for PyTorch Tensor.</p>
+<p class="rubric">Attributes</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.T_destination.html#urbanlc.model.pipeline_transforms.AppendBUI.T_destination" title="urbanlc.model.pipeline_transforms.AppendBUI.T_destination"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T_destination</span></code></a></p></td>
+<td><p>alias of TypeVar('T_destination', bound=<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>])</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.dump_patches.html#urbanlc.model.pipeline_transforms.AppendBUI.dump_patches" title="urbanlc.model.pipeline_transforms.AppendBUI.dump_patches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dump_patches</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_matrix.html#urbanlc.model.pipeline_transforms.AppendBUI.transform_matrix" title="urbanlc.model.pipeline_transforms.AppendBUI.transform_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_matrix</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.add_module.html#urbanlc.model.pipeline_transforms.AppendBUI.add_module" title="urbanlc.model.pipeline_transforms.AppendBUI.add_module"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_module</span></code></a>(name, module)</p></td>
+<td><p>Adds a child module to the current module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply.html#urbanlc.model.pipeline_transforms.AppendBUI.apply" title="urbanlc.model.pipeline_transforms.AppendBUI.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(fn)</p></td>
+<td><p>Applies <code class="docutils literal notranslate"><span class="pre">fn</span></code> recursively to every submodule (as returned by <code class="docutils literal notranslate"><span class="pre">.children()</span></code>) as well as self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_func.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_func" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_func</span></code></a>(in_tensor, params[, flags])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_non_transform</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_box.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_box" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_non_transform_box</span></code></a>(input, params, flags)</p></td>
+<td><p>Process boxes corresponding to the inputs that are no transformation applied.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_boxes.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_boxes" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_boxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_non_transform_boxes</span></code></a>(input, params, flags)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_class.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_class" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_class"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_non_transform_class</span></code></a>(input, params, flags)</p></td>
+<td><p>Process class tags corresponding to the inputs that are no transformation applied.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_keypoint.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_keypoint" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_keypoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_non_transform_keypoint</span></code></a>(input, params, ...)</p></td>
+<td><p>Process keypoints corresponding to the inputs that are no transformation applied.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_mask.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_mask" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_non_transform_mask</span></code></a>(input, params, flags)</p></td>
+<td><p>Process masks corresponding to the inputs that are no transformation applied.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_transform" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_transform</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p>Compute the Built-Up Index (BUI) for PyTorch Tensor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_box.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_box" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_transform_box</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p>Process boxes corresponding to the inputs that are transformed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_boxes.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_boxes" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_boxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_transform_boxes</span></code></a>(input, params, flags)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_class.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_class" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_class"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_transform_class</span></code></a>(input, params, flags)</p></td>
+<td><p>Process class tags corresponding to the inputs that are transformed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_keypoint.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_keypoint" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_keypoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_transform_keypoint</span></code></a>(input, params, flags)</p></td>
+<td><p>Process keypoints corresponding to the inputs that are transformed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_mask.html#urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_mask" title="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_transform_mask</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p>Process masks corresponding to the inputs that are transformed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.bfloat16.html#urbanlc.model.pipeline_transforms.AppendBUI.bfloat16" title="urbanlc.model.pipeline_transforms.AppendBUI.bfloat16"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfloat16</span></code></a>()</p></td>
+<td><p>Casts all floating point parameters and buffers to <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> datatype.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.buffers.html#urbanlc.model.pipeline_transforms.AppendBUI.buffers" title="urbanlc.model.pipeline_transforms.AppendBUI.buffers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buffers</span></code></a>([recurse])</p></td>
+<td><p>Returns an iterator over module buffers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.children.html#urbanlc.model.pipeline_transforms.AppendBUI.children" title="urbanlc.model.pipeline_transforms.AppendBUI.children"><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></a>()</p></td>
+<td><p>Returns an iterator over immediate children modules.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.compute_transformation.html#urbanlc.model.pipeline_transforms.AppendBUI.compute_transformation" title="urbanlc.model.pipeline_transforms.AppendBUI.compute_transformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_transformation</span></code></a>(input, params, flags)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.cpu.html#urbanlc.model.pipeline_transforms.AppendBUI.cpu" title="urbanlc.model.pipeline_transforms.AppendBUI.cpu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cpu</span></code></a>()</p></td>
+<td><p>Moves all model parameters and buffers to the CPU.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.cuda.html#urbanlc.model.pipeline_transforms.AppendBUI.cuda" title="urbanlc.model.pipeline_transforms.AppendBUI.cuda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cuda</span></code></a>([device])</p></td>
+<td><p>Moves all model parameters and buffers to the GPU.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.double.html#urbanlc.model.pipeline_transforms.AppendBUI.double" title="urbanlc.model.pipeline_transforms.AppendBUI.double"><code class="xref py py-obj docutils literal notranslate"><span class="pre">double</span></code></a>()</p></td>
+<td><p>Casts all floating point parameters and buffers to <code class="docutils literal notranslate"><span class="pre">double</span></code> datatype.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.eval.html#urbanlc.model.pipeline_transforms.AppendBUI.eval" title="urbanlc.model.pipeline_transforms.AppendBUI.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>()</p></td>
+<td><p>Sets the module in evaluation mode.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.extra_repr.html#urbanlc.model.pipeline_transforms.AppendBUI.extra_repr" title="urbanlc.model.pipeline_transforms.AppendBUI.extra_repr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extra_repr</span></code></a>()</p></td>
+<td><p>Set the extra representation of the module</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.float.html#urbanlc.model.pipeline_transforms.AppendBUI.float" title="urbanlc.model.pipeline_transforms.AppendBUI.float"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>()</p></td>
+<td><p>Casts all floating point parameters and buffers to <code class="docutils literal notranslate"><span class="pre">float</span></code> datatype.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.forward.html#urbanlc.model.pipeline_transforms.AppendBUI.forward" title="urbanlc.model.pipeline_transforms.AppendBUI.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a>(input[, params])</p></td>
+<td><p>Perform forward operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.forward_parameters.html#urbanlc.model.pipeline_transforms.AppendBUI.forward_parameters" title="urbanlc.model.pipeline_transforms.AppendBUI.forward_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward_parameters</span></code></a>(batch_shape)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.generate_parameters.html#urbanlc.model.pipeline_transforms.AppendBUI.generate_parameters" title="urbanlc.model.pipeline_transforms.AppendBUI.generate_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_parameters</span></code></a>(batch_shape)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.generate_transformation_matrix.html#urbanlc.model.pipeline_transforms.AppendBUI.generate_transformation_matrix" title="urbanlc.model.pipeline_transforms.AppendBUI.generate_transformation_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_transformation_matrix</span></code></a>(input, ...)</p></td>
+<td><p>Generate transformation matrices with the given input and param settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.get_buffer.html#urbanlc.model.pipeline_transforms.AppendBUI.get_buffer" title="urbanlc.model.pipeline_transforms.AppendBUI.get_buffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_buffer</span></code></a>(target)</p></td>
+<td><p>Returns the buffer given by <code class="docutils literal notranslate"><span class="pre">target</span></code> if it exists, otherwise throws an error.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.get_extra_state.html#urbanlc.model.pipeline_transforms.AppendBUI.get_extra_state" title="urbanlc.model.pipeline_transforms.AppendBUI.get_extra_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_extra_state</span></code></a>()</p></td>
+<td><p>Returns any extra state to include in the module's state_dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.get_parameter.html#urbanlc.model.pipeline_transforms.AppendBUI.get_parameter" title="urbanlc.model.pipeline_transforms.AppendBUI.get_parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameter</span></code></a>(target)</p></td>
+<td><p>Returns the parameter given by <code class="docutils literal notranslate"><span class="pre">target</span></code> if it exists, otherwise throws an error.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.get_submodule.html#urbanlc.model.pipeline_transforms.AppendBUI.get_submodule" title="urbanlc.model.pipeline_transforms.AppendBUI.get_submodule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_submodule</span></code></a>(target)</p></td>
+<td><p>Returns the submodule given by <code class="docutils literal notranslate"><span class="pre">target</span></code> if it exists, otherwise throws an error.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.half.html#urbanlc.model.pipeline_transforms.AppendBUI.half" title="urbanlc.model.pipeline_transforms.AppendBUI.half"><code class="xref py py-obj docutils literal notranslate"><span class="pre">half</span></code></a>()</p></td>
+<td><p>Casts all floating point parameters and buffers to <code class="docutils literal notranslate"><span class="pre">half</span></code> datatype.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.identity_matrix.html#urbanlc.model.pipeline_transforms.AppendBUI.identity_matrix" title="urbanlc.model.pipeline_transforms.AppendBUI.identity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">identity_matrix</span></code></a>(input)</p></td>
+<td><p>Return 3x3 identity matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_boxes.html#urbanlc.model.pipeline_transforms.AppendBUI.inverse_boxes" title="urbanlc.model.pipeline_transforms.AppendBUI.inverse_boxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_boxes</span></code></a>(input, params, flags[, transform])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_classes.html#urbanlc.model.pipeline_transforms.AppendBUI.inverse_classes" title="urbanlc.model.pipeline_transforms.AppendBUI.inverse_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_classes</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_inputs.html#urbanlc.model.pipeline_transforms.AppendBUI.inverse_inputs" title="urbanlc.model.pipeline_transforms.AppendBUI.inverse_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_inputs</span></code></a>(input, params, flags[, transform])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_keypoints.html#urbanlc.model.pipeline_transforms.AppendBUI.inverse_keypoints" title="urbanlc.model.pipeline_transforms.AppendBUI.inverse_keypoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_keypoints</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_masks.html#urbanlc.model.pipeline_transforms.AppendBUI.inverse_masks" title="urbanlc.model.pipeline_transforms.AppendBUI.inverse_masks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_masks</span></code></a>(input, params, flags[, transform])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.ipu.html#urbanlc.model.pipeline_transforms.AppendBUI.ipu" title="urbanlc.model.pipeline_transforms.AppendBUI.ipu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ipu</span></code></a>([device])</p></td>
+<td><p>Moves all model parameters and buffers to the IPU.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.load_state_dict.html#urbanlc.model.pipeline_transforms.AppendBUI.load_state_dict" title="urbanlc.model.pipeline_transforms.AppendBUI.load_state_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_state_dict</span></code></a>(state_dict[, strict])</p></td>
+<td><p>Copies parameters and buffers from <a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.state_dict.html#urbanlc.model.pipeline_transforms.AppendBUI.state_dict" title="urbanlc.model.pipeline_transforms.AppendBUI.state_dict"><code class="xref py py-attr docutils literal notranslate"><span class="pre">state_dict</span></code></a> into this module and its descendants.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.modules.html#urbanlc.model.pipeline_transforms.AppendBUI.modules" title="urbanlc.model.pipeline_transforms.AppendBUI.modules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modules</span></code></a>()</p></td>
+<td><p>Returns an iterator over all modules in the network.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.named_buffers.html#urbanlc.model.pipeline_transforms.AppendBUI.named_buffers" title="urbanlc.model.pipeline_transforms.AppendBUI.named_buffers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">named_buffers</span></code></a>([prefix, recurse])</p></td>
+<td><p>Returns an iterator over module buffers, yielding both the name of the buffer as well as the buffer itself.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.named_children.html#urbanlc.model.pipeline_transforms.AppendBUI.named_children" title="urbanlc.model.pipeline_transforms.AppendBUI.named_children"><code class="xref py py-obj docutils literal notranslate"><span class="pre">named_children</span></code></a>()</p></td>
+<td><p>Returns an iterator over immediate children modules, yielding both the name of the module as well as the module itself.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.named_modules.html#urbanlc.model.pipeline_transforms.AppendBUI.named_modules" title="urbanlc.model.pipeline_transforms.AppendBUI.named_modules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">named_modules</span></code></a>([memo, prefix, remove_duplicate])</p></td>
+<td><p>Returns an iterator over all modules in the network, yielding both the name of the module as well as the module itself.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.named_parameters.html#urbanlc.model.pipeline_transforms.AppendBUI.named_parameters" title="urbanlc.model.pipeline_transforms.AppendBUI.named_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">named_parameters</span></code></a>([prefix, recurse])</p></td>
+<td><p>Returns an iterator over module parameters, yielding both the name of the parameter as well as the parameter itself.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.parameters.html#urbanlc.model.pipeline_transforms.AppendBUI.parameters" title="urbanlc.model.pipeline_transforms.AppendBUI.parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code></a>([recurse])</p></td>
+<td><p>Returns an iterator over module parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_backward_hook.html#urbanlc.model.pipeline_transforms.AppendBUI.register_backward_hook" title="urbanlc.model.pipeline_transforms.AppendBUI.register_backward_hook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_backward_hook</span></code></a>(hook)</p></td>
+<td><p>Registers a backward hook on the module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_buffer.html#urbanlc.model.pipeline_transforms.AppendBUI.register_buffer" title="urbanlc.model.pipeline_transforms.AppendBUI.register_buffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_buffer</span></code></a>(name, tensor[, persistent])</p></td>
+<td><p>Adds a buffer to the module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_forward_hook.html#urbanlc.model.pipeline_transforms.AppendBUI.register_forward_hook" title="urbanlc.model.pipeline_transforms.AppendBUI.register_forward_hook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_forward_hook</span></code></a>(hook)</p></td>
+<td><p>Registers a forward hook on the module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_forward_pre_hook.html#urbanlc.model.pipeline_transforms.AppendBUI.register_forward_pre_hook" title="urbanlc.model.pipeline_transforms.AppendBUI.register_forward_pre_hook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_forward_pre_hook</span></code></a>(hook)</p></td>
+<td><p>Registers a forward pre-hook on the module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_full_backward_hook.html#urbanlc.model.pipeline_transforms.AppendBUI.register_full_backward_hook" title="urbanlc.model.pipeline_transforms.AppendBUI.register_full_backward_hook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_full_backward_hook</span></code></a>(hook)</p></td>
+<td><p>Registers a backward hook on the module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_load_state_dict_post_hook.html#urbanlc.model.pipeline_transforms.AppendBUI.register_load_state_dict_post_hook" title="urbanlc.model.pipeline_transforms.AppendBUI.register_load_state_dict_post_hook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_load_state_dict_post_hook</span></code></a>(hook)</p></td>
+<td><p>Registers a post hook to be run after module's <code class="docutils literal notranslate"><span class="pre">load_state_dict</span></code> is called.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_module.html#urbanlc.model.pipeline_transforms.AppendBUI.register_module" title="urbanlc.model.pipeline_transforms.AppendBUI.register_module"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_module</span></code></a>(name, module)</p></td>
+<td><p>Alias for <a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.add_module.html#urbanlc.model.pipeline_transforms.AppendBUI.add_module" title="urbanlc.model.pipeline_transforms.AppendBUI.add_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_module()</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_parameter.html#urbanlc.model.pipeline_transforms.AppendBUI.register_parameter" title="urbanlc.model.pipeline_transforms.AppendBUI.register_parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_parameter</span></code></a>(name, param)</p></td>
+<td><p>Adds a parameter to the module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.requires_grad_.html#urbanlc.model.pipeline_transforms.AppendBUI.requires_grad_" title="urbanlc.model.pipeline_transforms.AppendBUI.requires_grad_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requires_grad_</span></code></a>([requires_grad])</p></td>
+<td><p>Change if autograd should record operations on parameters in this module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.set_extra_state.html#urbanlc.model.pipeline_transforms.AppendBUI.set_extra_state" title="urbanlc.model.pipeline_transforms.AppendBUI.set_extra_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_extra_state</span></code></a>(state)</p></td>
+<td><p>This function is called from <a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.load_state_dict.html#urbanlc.model.pipeline_transforms.AppendBUI.load_state_dict" title="urbanlc.model.pipeline_transforms.AppendBUI.load_state_dict"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_state_dict()</span></code></a> to handle any extra state found within the <cite>state_dict</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.set_rng_device_and_dtype.html#urbanlc.model.pipeline_transforms.AppendBUI.set_rng_device_and_dtype" title="urbanlc.model.pipeline_transforms.AppendBUI.set_rng_device_and_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_rng_device_and_dtype</span></code></a>(device, dtype)</p></td>
+<td><p>Change the random generation device and dtype.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.share_memory.html#urbanlc.model.pipeline_transforms.AppendBUI.share_memory" title="urbanlc.model.pipeline_transforms.AppendBUI.share_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">share_memory</span></code></a>()</p></td>
+<td><p>See <code class="xref py py-meth docutils literal notranslate"><span class="pre">torch.Tensor.share_memory_()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.state_dict.html#urbanlc.model.pipeline_transforms.AppendBUI.state_dict" title="urbanlc.model.pipeline_transforms.AppendBUI.state_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">state_dict</span></code></a>(*args[, destination, prefix, ...])</p></td>
+<td><p>Returns a dictionary containing references to the whole state of the module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.to.html#urbanlc.model.pipeline_transforms.AppendBUI.to" title="urbanlc.model.pipeline_transforms.AppendBUI.to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Moves and/or casts the parameters and buffers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.to_empty.html#urbanlc.model.pipeline_transforms.AppendBUI.to_empty" title="urbanlc.model.pipeline_transforms.AppendBUI.to_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_empty</span></code></a>(*, device)</p></td>
+<td><p>Moves the parameters and buffers to the specified device without copying storage.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.train.html#urbanlc.model.pipeline_transforms.AppendBUI.train" title="urbanlc.model.pipeline_transforms.AppendBUI.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>([mode])</p></td>
+<td><p>Sets the module in training mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_boxes.html#urbanlc.model.pipeline_transforms.AppendBUI.transform_boxes" title="urbanlc.model.pipeline_transforms.AppendBUI.transform_boxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_boxes</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_classes.html#urbanlc.model.pipeline_transforms.AppendBUI.transform_classes" title="urbanlc.model.pipeline_transforms.AppendBUI.transform_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_classes</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_inputs.html#urbanlc.model.pipeline_transforms.AppendBUI.transform_inputs" title="urbanlc.model.pipeline_transforms.AppendBUI.transform_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_inputs</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_keypoints.html#urbanlc.model.pipeline_transforms.AppendBUI.transform_keypoints" title="urbanlc.model.pipeline_transforms.AppendBUI.transform_keypoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_keypoints</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_masks.html#urbanlc.model.pipeline_transforms.AppendBUI.transform_masks" title="urbanlc.model.pipeline_transforms.AppendBUI.transform_masks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_masks</span></code></a>(input, params, flags[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_output_tensor.html#urbanlc.model.pipeline_transforms.AppendBUI.transform_output_tensor" title="urbanlc.model.pipeline_transforms.AppendBUI.transform_output_tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_output_tensor</span></code></a>(output, output_shape)</p></td>
+<td><p>Standardize output tensors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_tensor.html#urbanlc.model.pipeline_transforms.AppendBUI.transform_tensor" title="urbanlc.model.pipeline_transforms.AppendBUI.transform_tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_tensor</span></code></a>(input)</p></td>
+<td><p>Convert any incoming (H, W), (C, H, W) and (B, C, H, W) into (B, C, H, W).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.type.html#urbanlc.model.pipeline_transforms.AppendBUI.type" title="urbanlc.model.pipeline_transforms.AppendBUI.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(dst_type)</p></td>
+<td><p>Casts all parameters and buffers to <code class="xref py py-attr docutils literal notranslate"><span class="pre">dst_type</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.validate_tensor.html#urbanlc.model.pipeline_transforms.AppendBUI.validate_tensor" title="urbanlc.model.pipeline_transforms.AppendBUI.validate_tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_tensor</span></code></a>(input)</p></td>
+<td><p>Check if the input tensor is formatted as expected.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.xpu.html#urbanlc.model.pipeline_transforms.AppendBUI.xpu" title="urbanlc.model.pipeline_transforms.AppendBUI.xpu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpu</span></code></a>([device])</p></td>
+<td><p>Moves all model parameters and buffers to the XPU.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.zero_grad.html#urbanlc.model.pipeline_transforms.AppendBUI.zero_grad" title="urbanlc.model.pipeline_transforms.AppendBUI.zero_grad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zero_grad</span></code></a>([set_to_none])</p></td>
+<td><p>Sets gradients of all model parameters to zero.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Worameth Chinchuthakun
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">urbanlc.model.pipeline_transforms.AppendBUI</a><ul>
+<li><a class="reference internal" href="#urbanlc.model.pipeline_transforms.AppendBUI"><code class="docutils literal notranslate"><span class="pre">AppendBUI</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>
