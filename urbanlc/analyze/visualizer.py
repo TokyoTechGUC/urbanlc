@@ -158,7 +158,7 @@ def plot_land_cover(
     ESA_color, norm = get_esa_colormap()
 
     # Display land cover data on the given axis
-    ax.imshow(img, cmap=ESA_color, norm=norm)
+    ax.imshow(img, cmap=ESA_color, norm=norm, interpolation="none")
     
     # Configure axis properties
     ax.grid(False)

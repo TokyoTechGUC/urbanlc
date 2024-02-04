@@ -231,8 +231,8 @@ def rand_bbox(size: Tuple[int], lam: float) -> Tuple[float, float, float, float]
     W = size[2]
     H = size[3]
     cut_rat = np.sqrt(1.0 - lam)
-    cut_w = np.int(W * cut_rat)
-    cut_h = np.int(H * cut_rat)
+    cut_w = int(W * cut_rat)
+    cut_h = int(H * cut_rat)
 
     # uniform
     cx = np.random.randint(W)
