@@ -14,19 +14,9 @@ from typing import Optional, Union, Dict, Tuple, Any
 from torchvision.datasets.utils import download_file_from_google_drive
 import os
 import yaml
+from huggingface_hub import snapshot_download
 
-MODEL_GGDRIVE_ID = {
-    "MSS_resnet50.pt": "1T2dNN931VnN1EUn8b3lmZwaY3mVxHYWg",
-    "TM_resnet50.pt": "1NL-rvvusxhbVCg4GkPbWANelpyIk_QF_",
-    "OLITIRS_resnet50.pt": "1smOhaM635ilQMOsFjlV5d-mLRBKJzfot",
-}
-
-CONFIG_GGDRIVE_ID = {
-    "MSS_resnet50.yml": "1BlAaAkS4SwNA3IA_WvK-vJ1uFVNIKAes",#https://drive.google.com/file/d/1BlAaAkS4SwNA3IA_WvK-vJ1uFVNIKAes/view?usp=drive_link
-    "TM_resnet50.yml": "1iCpEY3wA7_jLmw-QffsadOjzcxSEc1hZ",#https://drive.google.com/file/d/1iCpEY3wA7_jLmw-QffsadOjzcxSEc1hZ/view?usp=drive_link
-    "OLITIRS_resnet50.yml": "1qygGBmZphBhh3m0ZsG4DAh_QKyC898jH",#https://drive.google.com/file/d/1qygGBmZphBhh3m0ZsG4DAh_QKyC898jH/view?usp=drive_link
-}
-
+REPO_ID = "sincostanx/urbanlc"
 PRETRAINED_MODELS = ["MSS_resnet50", "TM_resnet50", "OLITIRS_resnet50"]
 
 def download_model_and_config(model_id: str) -> Tuple[str, Dict[str, Any]]:
@@ -44,19 +34,11 @@ def download_model_and_config(model_id: str) -> Tuple[str, Dict[str, Any]]:
     config_name = f"{model_id}.yml"
     root = "pretrained_models"
 
-    # download model
+    # download models and config file
     model_path = os.path.join(root, model_name)
-    if not os.path.isfile(model_path):
-        os.makedirs(root, exist_ok=True)
-        id = MODEL_GGDRIVE_ID[model_name]
-        download_file_from_google_drive(id, root, model_name)
-
-    # download config file
     config_path = os.path.join(root, config_name)
-    if not os.path.isfile(config_path):
-        os.makedirs(root, exist_ok=True)
-        id = CONFIG_GGDRIVE_ID[config_name]
-        download_file_from_google_drive(id, root, config_name)
+    if (not os.path.isfile(model_path)) or (not os.path.isfile(config_path)):
+        snapshot_download(repo_id=REPO_ID, local_dir=root)
 
     # extract necessary parameters from config file
     with open(config_path, "r") as f:
