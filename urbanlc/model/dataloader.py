@@ -88,7 +88,6 @@ class CustomRasterDataset(RasterDataset):
             all_paths = parse_paths(root, self.filename_glob, exclude)
         else:
             all_paths = natsorted(all_paths)
-        print(len(all_paths))
 
         # Populate the dataset index
         i = 0
@@ -263,7 +262,6 @@ def get_dataloader(landsat, esa, sensor_type, tile_per_loader=24, input_size=(22
     num_loaders = int(np.ceil(float(len(idxs)) / TILE_PER_LOADER))
     for i in range(num_loaders):
         selected_idx = idxs[i*TILE_PER_LOADER : min(len(idxs), (i+1)*TILE_PER_LOADER)]
-        print(selected_idx)
         selected_img = np.array(all_img_paths)[selected_idx]
         selected_gt = np.array(all_label_paths)[selected_idx]
 

@@ -24,8 +24,10 @@ from .pipeline_transforms import MSSTransformer, TMTransformer, OLITIRSTransform
 from .dataloader import get_dataloader, parse_paths
 
 try:
+    HAVE_WANDB = True
     import wandb
 except Exception:
+    HAVE_WANDB = False
     warnings.warn("wandb is not installed, deep-learning model training is disabled.")
 
 class DeepLearningLCC(LCC):
@@ -283,7 +285,10 @@ class DeepLearningLCC(LCC):
                 else:
                     loss = loss + weight * loss_fn(preds, gt)
 
-            wandb.log({f"Train/loss": loss.item()}, step=step)
+            if self.use_wandb:
+                wandb.log({f"Train/loss": loss.item()}, step=step)
+            else:
+                print(f"step: {step} loss: {loss.item()}")
 
             sample_count += img.size(0)
             batch_loss = loss.item()
@@ -311,8 +316,8 @@ class DeepLearningLCC(LCC):
         self,
         dataloader_params: Dict[str, Any],
         trainer_params: Dict[str, Any],
-        validate_params: Dict[str, Any],
-        logger_params: Dict[str, Any],
+        validate_params: Optional[Dict[str, Any]],
+        logger_params: Optional[Dict[str, Any]],
     ) -> None:
         """
         Train the deep learning model.
@@ -327,14 +332,16 @@ class DeepLearningLCC(LCC):
         :type logger_params: Dict[str, Any]
         """
         # initialize logger
-        config_list = [dataloader_params, trainer_params, validate_params]
-        config = {k: v for d in config_list for k, v in d.items()}
-        wandb.init(
-            project=logger_params["PROJECT"],
-            name=logger_params["NAME"],
-            config=config,
-            settings=wandb.Settings(start_method="fork"),
-        )
+        self.use_wandb = HAVE_WANDB and ("PROJECT" in logger_params)
+        if self.use_wandb:
+            config_list = [dataloader_params, trainer_params, validate_params]
+            config = {k: v for d in config_list for k, v in d.items()}
+            wandb.init(
+                project=logger_params["PROJECT"],
+                name=logger_params["NAME"],
+                config=config,
+                settings=wandb.Settings(start_method="fork"),
+            )
 
         # loss func, optimizer, scheduler
         self.setup_trainer(**trainer_params)
@@ -359,9 +366,13 @@ class DeepLearningLCC(LCC):
             train_loader = train_loaders[loader_remaining - 1]
 
             # train for one epoch
-            wandb.log({"Epoch": epoch}, step=step)
+            if self.use_wandb:
+                wandb.log({"Epoch": epoch}, step=step)
+            else:
+                print(f"Epoch {epoch}")
+
             step, metrics, train_loss, sample_count = \
-                self.train_one_epoch(step, train_loader, epoch, MAX_EPOCH, metrics, GRADIENT_ACCUMULATION_FACTOR)
+                    self.train_one_epoch(step, train_loader, epoch, MAX_EPOCH, metrics, GRADIENT_ACCUMULATION_FACTOR)
 
             self.scheduler.step()
 
@@ -372,25 +383,29 @@ class DeepLearningLCC(LCC):
                 train_results[metric_name] = score.detach().cpu().numpy()
                 metric.reset()
 
-            val_results = self.validate(**validate_params)
+            if validate_params is not None:
+                val_results = self.validate(**validate_params)
 
-            if (
-                best_scores[main_metrics] == -1
-                or val_results[main_metrics] >= best_scores[main_metrics]
-            ):
-                best_scores = val_results.copy()
-                self.save_model(f"{logger_params['NAME']}_best", epoch)
+                if (
+                    best_scores[main_metrics] == -1
+                    or val_results[main_metrics] >= best_scores[main_metrics]
+                ):
+                    best_scores = val_results.copy()
+                    self.save_model(f"{logger_params['NAME']}_best", epoch)
 
-            self.save_model(f"{logger_params['NAME']}_latest", epoch)
-
-            result = train_results.copy()
-            result.update(val_results)
-            result["Train/average_loss"] = train_loss / sample_count
-
-            wandb.log(result, step=step)
+            if self.use_wandb:
+                result = train_results.copy()
+                result.update(val_results)
+                result["Train/average_loss"] = train_loss / sample_count
+                wandb.log(result, step=step)
+            
             loader_remaining -= 1
 
-        wandb.finish()
+            self.save_model(f"{logger_params['NAME']}_epoch{epoch}", epoch)
+            self.save_model(f"{logger_params['NAME']}_latest", epoch)
+
+        if self.use_wandb:
+            wandb.finish()
 
     def validate(self, root: str = None, img_glob: str = None, gt_glob: str = None,
         img_paths: Optional[List[str]] = None, gt_paths: Optional[List[str]] = None, cache: bool = True) -> Dict[str, Any]:
