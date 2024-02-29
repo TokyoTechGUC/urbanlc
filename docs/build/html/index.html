@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="&lt;no title&gt;" href="quickstart.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Getting Started" href="getting_started.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>UrbanLC 0.0.1 documentation</title>
@@ -154,7 +154,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">API documentation</span></p>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="generated/urbanlc.utils.html">urbanlc.utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/urbanlc.downloader.base.html">urbanlc.downloader.base</a></li>
@@ -205,21 +211,48 @@
         <article role="main">
           <section id="urbanlc-reference-documentation">
 <h1>UrbanLC reference documentation<a class="headerlink" href="#urbanlc-reference-documentation" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>UrbanLC is a Python library for land cover classification (LCC) from Landsat Images.</p>
 <p>It features pretrained deep learning models, which are compatible with all Landsat sensors up-to-date: MSS, TM, and OLI-TIRS.
 The library further contains some utility functions for analyzing and visualizing land cover maps and tutorials for for researchers and practitioners.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/sincostanx/UrbanLC.git
-</pre></div>
-</div>
-<p><a class="reference external" href="https://github.com/sincostanx/UrbanLC">GitHub link</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>This library is developed by <strong>Worameth Chinchuthakun</strong> and maintained by <strong>Global Urban Climate Studies Lab</strong> at Tokyo Institute of Technology</p></li>
 </ul>
 </div>
-<p>A set of quickstart Jupyter notebooks can be found <a class="reference external" href="https://github.com/sincostanx/UrbanLC/tree/main/tutorials">here</a>.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/TokyoTechGUC/urbanlc
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/TokyoTechGUC/urbanlc">GitHub link</a>.</p>
+</section>
+<section id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this heading">#</a></h2>
+<p>The performance of models depends on the quality of input data (Landsat surface reflectance), such as the degree of cloud coverage and geometric/radiometric calibration errors.
+There is no guarantee that the predictions will reflect the actual past land covers.
+Hence, users are strongly advised to verify their accuracy by comparing/ensembling with other available historical data to increase the plausibility of the hindcasts.
+With this, the developers are not held responsible for any decisions based on the model.</p>
+</section>
+<section id="table-of-content">
+<h2>Table of Content<a class="headerlink" href="#table-of-content" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#downloading-landsat-data">Downloading Landsat data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#predicting-land-cover-maps">Predicting land cover maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#visualizing-results">Visualizing results</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">References</a></li>
+</ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">API documentation</span></p>
@@ -240,18 +273,19 @@ The library further contains some utility functions for analyzing and visualizin
 </ul>
 </div>
 </section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="quickstart.html">
+          <a class="next-page" href="getting_started.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">&lt;no title&gt;</div>
+                <div class="title">Getting Started</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -287,6 +321,12 @@ The library further contains some utility functions for analyzing and visualizin
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">UrbanLC reference documentation</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
+<li><a class="reference internal" href="#table-of-content">Table of Content</a><ul>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

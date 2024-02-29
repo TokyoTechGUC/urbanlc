@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="urbanlc.model.baseline.BaselineLCC.save_model" href="urbanlc.model.baseline.BaselineLCC.save_model.html" /><link rel="prev" title="urbanlc.model.baseline.BaselineLCC.load_model" href="urbanlc.model.baseline.BaselineLCC.load_model.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>urbanlc.model.baseline.BaselineLCC.retrieve_images - UrbanLC 0.0.1 documentation</title>
@@ -154,390 +154,27 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../api.html">API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.utils.export_geotiff.html">urbanlc.utils.export_geotiff</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.utils.open_at_scale.html">urbanlc.utils.open_at_scale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.utils.open_at_size.html">urbanlc.utils.open_at_size</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.downloader.base.BoundingBox.html">urbanlc.downloader.base.BoundingBox</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BoundingBox.bounds.html">urbanlc.downloader.base.BoundingBox.bounds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BoundingBox.region.html">urbanlc.downloader.base.BoundingBox.region</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BoundingBox.from_bounds.html">urbanlc.downloader.base.BoundingBox.from_bounds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BoundingBox.from_point.html">urbanlc.downloader.base.BoundingBox.from_point</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BoundingBox.get_partition.html">urbanlc.downloader.base.BoundingBox.get_partition</a></li>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.downloader.base.BaseDownloader.html">urbanlc.downloader.base.BaseDownloader</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BaseDownloader.download_image.html">urbanlc.downloader.base.BaseDownloader.download_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BaseDownloader.download_images.html">urbanlc.downloader.base.BaseDownloader.download_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BaseDownloader.get_spatial_filter.html">urbanlc.downloader.base.BaseDownloader.get_spatial_filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BaseDownloader.merge_patches.html">urbanlc.downloader.base.BaseDownloader.merge_patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BaseDownloader.remove_cache.html">urbanlc.downloader.base.BaseDownloader.remove_cache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.base.BaseDownloader.set_root.html">urbanlc.downloader.base.BaseDownloader.set_root</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">References</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.ESAWorldCover.html">urbanlc.downloader.esa2021_downloader.ESAWorldCover</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.ESAWorldCover.download_image.html">urbanlc.downloader.esa2021_downloader.ESAWorldCover.download_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.ESAWorldCover.download_images.html">urbanlc.downloader.esa2021_downloader.ESAWorldCover.download_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.ESAWorldCover.get_spatial_filter.html">urbanlc.downloader.esa2021_downloader.ESAWorldCover.get_spatial_filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.ESAWorldCover.initialize.html">urbanlc.downloader.esa2021_downloader.ESAWorldCover.initialize</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.ESAWorldCover.merge_patches.html">urbanlc.downloader.esa2021_downloader.ESAWorldCover.merge_patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.ESAWorldCover.remove_cache.html">urbanlc.downloader.esa2021_downloader.ESAWorldCover.remove_cache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.ESAWorldCover.set_root.html">urbanlc.downloader.esa2021_downloader.ESAWorldCover.set_root</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.apply_scale_factors.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.apply_scale_factors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.download_image.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.download_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.download_images.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.download_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.get_spatial_filter.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.get_spatial_filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.mask_clouds.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.mask_clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.merge_patches.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.merge_patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.remove_cache.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.remove_cache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.retrieve_image.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.retrieve_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.Landsat_Collection2.set_root.html">urbanlc.downloader.landsat_downloader.Landsat_Collection2.set_root</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.html">urbanlc.downloader.landsat_downloader.LandsatMSS</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.apply_scale_factors.html">urbanlc.downloader.landsat_downloader.LandsatMSS.apply_scale_factors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.download_image.html">urbanlc.downloader.landsat_downloader.LandsatMSS.download_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.download_images.html">urbanlc.downloader.landsat_downloader.LandsatMSS.download_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.get_spatial_filter.html">urbanlc.downloader.landsat_downloader.LandsatMSS.get_spatial_filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.initialize.html">urbanlc.downloader.landsat_downloader.LandsatMSS.initialize</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.mask_clouds.html">urbanlc.downloader.landsat_downloader.LandsatMSS.mask_clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.merge_patches.html">urbanlc.downloader.landsat_downloader.LandsatMSS.merge_patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.remove_cache.html">urbanlc.downloader.landsat_downloader.LandsatMSS.remove_cache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.retrieve_image.html">urbanlc.downloader.landsat_downloader.LandsatMSS.retrieve_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatMSS.set_root.html">urbanlc.downloader.landsat_downloader.LandsatMSS.set_root</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.html">urbanlc.downloader.landsat_downloader.LandsatTM</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.apply_scale_factors.html">urbanlc.downloader.landsat_downloader.LandsatTM.apply_scale_factors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.download_image.html">urbanlc.downloader.landsat_downloader.LandsatTM.download_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.download_images.html">urbanlc.downloader.landsat_downloader.LandsatTM.download_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.get_spatial_filter.html">urbanlc.downloader.landsat_downloader.LandsatTM.get_spatial_filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.initialize.html">urbanlc.downloader.landsat_downloader.LandsatTM.initialize</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.mask_clouds.html">urbanlc.downloader.landsat_downloader.LandsatTM.mask_clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.merge_patches.html">urbanlc.downloader.landsat_downloader.LandsatTM.merge_patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.remove_cache.html">urbanlc.downloader.landsat_downloader.LandsatTM.remove_cache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.retrieve_image.html">urbanlc.downloader.landsat_downloader.LandsatTM.retrieve_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatTM.set_root.html">urbanlc.downloader.landsat_downloader.LandsatTM.set_root</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.apply_scale_factors.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.apply_scale_factors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.download_image.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.download_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.download_images.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.download_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.get_spatial_filter.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.get_spatial_filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.initialize.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.initialize</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.mask_clouds.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.mask_clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.merge_patches.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.merge_patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.remove_cache.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.remove_cache</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.retrieve_image.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.retrieve_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.LandsatOLITIRS.set_root.html">urbanlc.downloader.landsat_downloader.LandsatOLITIRS.set_root</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.metrics.confusion_matrix.html">urbanlc.analyze.metrics.confusion_matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.metrics.accuracy.html">urbanlc.analyze.metrics.accuracy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.metrics.producer_accuracy.html">urbanlc.analyze.metrics.producer_accuracy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.metrics.user_accuracy.html">urbanlc.analyze.metrics.user_accuracy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.metrics.cohen_kappa.html">urbanlc.analyze.metrics.cohen_kappa</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.metrics.get_class_distribution.html">urbanlc.analyze.metrics.get_class_distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.visualizer.get_esa_colormap.html">urbanlc.analyze.visualizer.get_esa_colormap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.visualizer.plot_class_distribution.html">urbanlc.analyze.visualizer.plot_class_distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.visualizer.show_esa_label.html">urbanlc.analyze.visualizer.show_esa_label</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.visualizer.plot_land_cover.html">urbanlc.analyze.visualizer.plot_land_cover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.visualizer.plot_landsat.html">urbanlc.analyze.visualizer.plot_landsat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.visualizer.plot_change.html">urbanlc.analyze.visualizer.plot_change</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.analyze.visualizer.visualize_data_batch.html">urbanlc.analyze.visualizer.visualize_data_batch</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.base.LCC.html">urbanlc.model.base.LCC</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.base.LCC.construct_transform_map.html">urbanlc.model.base.LCC.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.base.LCC.infer.html">urbanlc.model.base.LCC.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.base.LCC.load_model.html">urbanlc.model.base.LCC.load_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.base.LCC.save_model.html">urbanlc.model.base.LCC.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.base.LCC.train.html">urbanlc.model.base.LCC.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.base.LCC.validate.html">urbanlc.model.base.LCC.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.html">urbanlc.model.baseline.BaselineLCC</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.build_model.html">urbanlc.model.baseline.BaselineLCC.build_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.construct_transform_map.html">urbanlc.model.baseline.BaselineLCC.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.infer.html">urbanlc.model.baseline.BaselineLCC.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.load_model.html">urbanlc.model.baseline.BaselineLCC.load_model</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">urbanlc.model.baseline.BaselineLCC.retrieve_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.save_model.html">urbanlc.model.baseline.BaselineLCC.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.train.html">urbanlc.model.baseline.BaselineLCC.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.transform_pipeline.html">urbanlc.model.baseline.BaselineLCC.transform_pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.update_transform_map.html">urbanlc.model.baseline.BaselineLCC.update_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.BaselineLCC.validate.html">urbanlc.model.baseline.BaselineLCC.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.html">urbanlc.model.baseline.MSSBaseline</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.build_model.html">urbanlc.model.baseline.MSSBaseline.build_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.construct_transform_map.html">urbanlc.model.baseline.MSSBaseline.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.infer.html">urbanlc.model.baseline.MSSBaseline.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.load_model.html">urbanlc.model.baseline.MSSBaseline.load_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.retrieve_images.html">urbanlc.model.baseline.MSSBaseline.retrieve_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.save_model.html">urbanlc.model.baseline.MSSBaseline.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.train.html">urbanlc.model.baseline.MSSBaseline.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.transform_pipeline.html">urbanlc.model.baseline.MSSBaseline.transform_pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.update_transform_map.html">urbanlc.model.baseline.MSSBaseline.update_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.MSSBaseline.validate.html">urbanlc.model.baseline.MSSBaseline.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.html">urbanlc.model.baseline.TMBaseline</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.build_model.html">urbanlc.model.baseline.TMBaseline.build_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.construct_transform_map.html">urbanlc.model.baseline.TMBaseline.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.infer.html">urbanlc.model.baseline.TMBaseline.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.load_model.html">urbanlc.model.baseline.TMBaseline.load_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.retrieve_images.html">urbanlc.model.baseline.TMBaseline.retrieve_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.save_model.html">urbanlc.model.baseline.TMBaseline.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.train.html">urbanlc.model.baseline.TMBaseline.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.transform_pipeline.html">urbanlc.model.baseline.TMBaseline.transform_pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.update_transform_map.html">urbanlc.model.baseline.TMBaseline.update_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.TMBaseline.validate.html">urbanlc.model.baseline.TMBaseline.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.html">urbanlc.model.baseline.OLI_TIRSBaseline</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.build_model.html">urbanlc.model.baseline.OLI_TIRSBaseline.build_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.construct_transform_map.html">urbanlc.model.baseline.OLI_TIRSBaseline.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.infer.html">urbanlc.model.baseline.OLI_TIRSBaseline.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.load_model.html">urbanlc.model.baseline.OLI_TIRSBaseline.load_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.retrieve_images.html">urbanlc.model.baseline.OLI_TIRSBaseline.retrieve_images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.save_model.html">urbanlc.model.baseline.OLI_TIRSBaseline.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.train.html">urbanlc.model.baseline.OLI_TIRSBaseline.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.transform_pipeline.html">urbanlc.model.baseline.OLI_TIRSBaseline.transform_pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.update_transform_map.html">urbanlc.model.baseline.OLI_TIRSBaseline.update_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.baseline.OLI_TIRSBaseline.validate.html">urbanlc.model.baseline.OLI_TIRSBaseline.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.dataloader.get_dataloader.html">urbanlc.model.dataloader.get_dataloader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.dataloader.parse_paths.html">urbanlc.model.dataloader.parse_paths</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.html">urbanlc.model.dataloader.CustomRasterDataset</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.all_bands.html">urbanlc.model.dataloader.CustomRasterDataset.all_bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.bounds.html">urbanlc.model.dataloader.CustomRasterDataset.bounds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.cmap.html">urbanlc.model.dataloader.CustomRasterDataset.cmap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.crs.html">urbanlc.model.dataloader.CustomRasterDataset.crs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.date_format.html">urbanlc.model.dataloader.CustomRasterDataset.date_format</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.filename_glob.html">urbanlc.model.dataloader.CustomRasterDataset.filename_glob</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.filename_regex.html">urbanlc.model.dataloader.CustomRasterDataset.filename_regex</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.is_image.html">urbanlc.model.dataloader.CustomRasterDataset.is_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.rgb_bands.html">urbanlc.model.dataloader.CustomRasterDataset.rgb_bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.CustomRasterDataset.separate_files.html">urbanlc.model.dataloader.CustomRasterDataset.separate_files</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.html">urbanlc.model.dataloader.ESA2021</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.all_bands.html">urbanlc.model.dataloader.ESA2021.all_bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.bounds.html">urbanlc.model.dataloader.ESA2021.bounds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.cmap.html">urbanlc.model.dataloader.ESA2021.cmap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.crs.html">urbanlc.model.dataloader.ESA2021.crs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.date_format.html">urbanlc.model.dataloader.ESA2021.date_format</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.filename_glob.html">urbanlc.model.dataloader.ESA2021.filename_glob</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.filename_regex.html">urbanlc.model.dataloader.ESA2021.filename_regex</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.is_image.html">urbanlc.model.dataloader.ESA2021.is_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.rgb_bands.html">urbanlc.model.dataloader.ESA2021.rgb_bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.ESA2021.separate_files.html">urbanlc.model.dataloader.ESA2021.separate_files</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.html">urbanlc.model.dataloader.Landsat</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.all_bands.html">urbanlc.model.dataloader.Landsat.all_bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.bounds.html">urbanlc.model.dataloader.Landsat.bounds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.cmap.html">urbanlc.model.dataloader.Landsat.cmap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.crs.html">urbanlc.model.dataloader.Landsat.crs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.date_format.html">urbanlc.model.dataloader.Landsat.date_format</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.filename_glob.html">urbanlc.model.dataloader.Landsat.filename_glob</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.filename_regex.html">urbanlc.model.dataloader.Landsat.filename_regex</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.is_image.html">urbanlc.model.dataloader.Landsat.is_image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.rgb_bands.html">urbanlc.model.dataloader.Landsat.rgb_bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.separate_files.html">urbanlc.model.dataloader.Landsat.separate_files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.MSS.html">urbanlc.model.dataloader.Landsat.MSS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.OLITIRS.html">urbanlc.model.dataloader.Landsat.OLITIRS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.dataloader.Landsat.TM.html">urbanlc.model.dataloader.Landsat.TM</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.html">urbanlc.model.deep_learning.DeepLearningLCC</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.build_model.html">urbanlc.model.deep_learning.DeepLearningLCC.build_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.construct_transform_map.html">urbanlc.model.deep_learning.DeepLearningLCC.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.denormalize_class.html">urbanlc.model.deep_learning.DeepLearningLCC.denormalize_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.get_metrics.html">urbanlc.model.deep_learning.DeepLearningLCC.get_metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.infer.html">urbanlc.model.deep_learning.DeepLearningLCC.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.load_model.html">urbanlc.model.deep_learning.DeepLearningLCC.load_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.normalize_class.html">urbanlc.model.deep_learning.DeepLearningLCC.normalize_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.save_model.html">urbanlc.model.deep_learning.DeepLearningLCC.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.set_device.html">urbanlc.model.deep_learning.DeepLearningLCC.set_device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.setup_trainer.html">urbanlc.model.deep_learning.DeepLearningLCC.setup_trainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.to.html">urbanlc.model.deep_learning.DeepLearningLCC.to</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.train.html">urbanlc.model.deep_learning.DeepLearningLCC.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.train_one_epoch.html">urbanlc.model.deep_learning.DeepLearningLCC.train_one_epoch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.DeepLearningLCC.validate.html">urbanlc.model.deep_learning.DeepLearningLCC.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.html">urbanlc.model.deep_learning.MSSDeepLearning</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.build_model.html">urbanlc.model.deep_learning.MSSDeepLearning.build_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.construct_transform_map.html">urbanlc.model.deep_learning.MSSDeepLearning.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.denormalize_class.html">urbanlc.model.deep_learning.MSSDeepLearning.denormalize_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.get_metrics.html">urbanlc.model.deep_learning.MSSDeepLearning.get_metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.infer.html">urbanlc.model.deep_learning.MSSDeepLearning.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.load_model.html">urbanlc.model.deep_learning.MSSDeepLearning.load_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.normalize_class.html">urbanlc.model.deep_learning.MSSDeepLearning.normalize_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.save_model.html">urbanlc.model.deep_learning.MSSDeepLearning.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.set_device.html">urbanlc.model.deep_learning.MSSDeepLearning.set_device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.setup_trainer.html">urbanlc.model.deep_learning.MSSDeepLearning.setup_trainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.to.html">urbanlc.model.deep_learning.MSSDeepLearning.to</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.train.html">urbanlc.model.deep_learning.MSSDeepLearning.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.train_one_epoch.html">urbanlc.model.deep_learning.MSSDeepLearning.train_one_epoch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.MSSDeepLearning.validate.html">urbanlc.model.deep_learning.MSSDeepLearning.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.html">urbanlc.model.deep_learning.TMDeepLearning</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.build_model.html">urbanlc.model.deep_learning.TMDeepLearning.build_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.construct_transform_map.html">urbanlc.model.deep_learning.TMDeepLearning.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.denormalize_class.html">urbanlc.model.deep_learning.TMDeepLearning.denormalize_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.get_metrics.html">urbanlc.model.deep_learning.TMDeepLearning.get_metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.infer.html">urbanlc.model.deep_learning.TMDeepLearning.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.load_model.html">urbanlc.model.deep_learning.TMDeepLearning.load_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.normalize_class.html">urbanlc.model.deep_learning.TMDeepLearning.normalize_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.save_model.html">urbanlc.model.deep_learning.TMDeepLearning.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.set_device.html">urbanlc.model.deep_learning.TMDeepLearning.set_device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.setup_trainer.html">urbanlc.model.deep_learning.TMDeepLearning.setup_trainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.to.html">urbanlc.model.deep_learning.TMDeepLearning.to</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.train.html">urbanlc.model.deep_learning.TMDeepLearning.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.train_one_epoch.html">urbanlc.model.deep_learning.TMDeepLearning.train_one_epoch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.TMDeepLearning.validate.html">urbanlc.model.deep_learning.TMDeepLearning.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.html">urbanlc.model.deep_learning.OLITIRSDeepLearning</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.build_model.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.build_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.construct_transform_map.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.construct_transform_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.denormalize_class.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.denormalize_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.get_metrics.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.get_metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.infer.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.infer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.load_model.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.load_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.normalize_class.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.normalize_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.save_model.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.save_model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.set_device.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.set_device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.setup_trainer.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.setup_trainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.to.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.to</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.train.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.train_one_epoch.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.train_one_epoch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.deep_learning.OLITIRSDeepLearning.validate.html">urbanlc.model.deep_learning.OLITIRSDeepLearning.validate</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.download.download_model.html">urbanlc.model.download.download_model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.train_utils.combine_prediction.html">urbanlc.model.train_utils.combine_prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.train_utils.load_checkpoint.html">urbanlc.model.train_utils.load_checkpoint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.train_utils.save_checkpoint.html">urbanlc.model.train_utils.save_checkpoint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.train_utils.segment_satelite_image.html">urbanlc.model.train_utils.segment_satelite_image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.train_utils.set_seed.html">urbanlc.model.train_utils.set_seed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.pipeline_transforms.compute_BUI.html">urbanlc.model.pipeline_transforms.compute_BUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.pipeline_transforms.compute_NDBI.html">urbanlc.model.pipeline_transforms.compute_NDBI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.pipeline_transforms.compute_NDVI.html">urbanlc.model.pipeline_transforms.compute_NDVI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.pipeline_transforms.compute_NDWI.html">urbanlc.model.pipeline_transforms.compute_NDWI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.pipeline_transforms.mix_patch.html">urbanlc.model.pipeline_transforms.mix_patch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="urbanlc.model.pipeline_transforms.rand_bbox.html">urbanlc.model.pipeline_transforms.rand_bbox</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.html">urbanlc.model.pipeline_transforms.AppendBUI</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.T_destination.html">urbanlc.model.pipeline_transforms.AppendBUI.T_destination</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.dump_patches.html">urbanlc.model.pipeline_transforms.AppendBUI.dump_patches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_matrix.html">urbanlc.model.pipeline_transforms.AppendBUI.transform_matrix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.add_module.html">urbanlc.model.pipeline_transforms.AppendBUI.add_module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply.html">urbanlc.model.pipeline_transforms.AppendBUI.apply</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_func.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_func</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_box.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_box</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_boxes.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_boxes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_class.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_keypoint.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_keypoint</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_mask.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_non_transform_mask</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_transform</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_box.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_box</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_boxes.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_boxes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_class.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_keypoint.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_keypoint</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_mask.html">urbanlc.model.pipeline_transforms.AppendBUI.apply_transform_mask</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.bfloat16.html">urbanlc.model.pipeline_transforms.AppendBUI.bfloat16</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.buffers.html">urbanlc.model.pipeline_transforms.AppendBUI.buffers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.children.html">urbanlc.model.pipeline_transforms.AppendBUI.children</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.compute_transformation.html">urbanlc.model.pipeline_transforms.AppendBUI.compute_transformation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.cpu.html">urbanlc.model.pipeline_transforms.AppendBUI.cpu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.cuda.html">urbanlc.model.pipeline_transforms.AppendBUI.cuda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.double.html">urbanlc.model.pipeline_transforms.AppendBUI.double</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.eval.html">urbanlc.model.pipeline_transforms.AppendBUI.eval</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.extra_repr.html">urbanlc.model.pipeline_transforms.AppendBUI.extra_repr</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.float.html">urbanlc.model.pipeline_transforms.AppendBUI.float</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.forward.html">urbanlc.model.pipeline_transforms.AppendBUI.forward</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.forward_parameters.html">urbanlc.model.pipeline_transforms.AppendBUI.forward_parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.generate_parameters.html">urbanlc.model.pipeline_transforms.AppendBUI.generate_parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.generate_transformation_matrix.html">urbanlc.model.pipeline_transforms.AppendBUI.generate_transformation_matrix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.get_buffer.html">urbanlc.model.pipeline_transforms.AppendBUI.get_buffer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.get_extra_state.html">urbanlc.model.pipeline_transforms.AppendBUI.get_extra_state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.get_parameter.html">urbanlc.model.pipeline_transforms.AppendBUI.get_parameter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.get_submodule.html">urbanlc.model.pipeline_transforms.AppendBUI.get_submodule</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.half.html">urbanlc.model.pipeline_transforms.AppendBUI.half</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.identity_matrix.html">urbanlc.model.pipeline_transforms.AppendBUI.identity_matrix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_boxes.html">urbanlc.model.pipeline_transforms.AppendBUI.inverse_boxes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_classes.html">urbanlc.model.pipeline_transforms.AppendBUI.inverse_classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_inputs.html">urbanlc.model.pipeline_transforms.AppendBUI.inverse_inputs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_keypoints.html">urbanlc.model.pipeline_transforms.AppendBUI.inverse_keypoints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.inverse_masks.html">urbanlc.model.pipeline_transforms.AppendBUI.inverse_masks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.ipu.html">urbanlc.model.pipeline_transforms.AppendBUI.ipu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.load_state_dict.html">urbanlc.model.pipeline_transforms.AppendBUI.load_state_dict</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.modules.html">urbanlc.model.pipeline_transforms.AppendBUI.modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.named_buffers.html">urbanlc.model.pipeline_transforms.AppendBUI.named_buffers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.named_children.html">urbanlc.model.pipeline_transforms.AppendBUI.named_children</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.named_modules.html">urbanlc.model.pipeline_transforms.AppendBUI.named_modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.named_parameters.html">urbanlc.model.pipeline_transforms.AppendBUI.named_parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.parameters.html">urbanlc.model.pipeline_transforms.AppendBUI.parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_backward_hook.html">urbanlc.model.pipeline_transforms.AppendBUI.register_backward_hook</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_buffer.html">urbanlc.model.pipeline_transforms.AppendBUI.register_buffer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_forward_hook.html">urbanlc.model.pipeline_transforms.AppendBUI.register_forward_hook</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_forward_pre_hook.html">urbanlc.model.pipeline_transforms.AppendBUI.register_forward_pre_hook</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_full_backward_hook.html">urbanlc.model.pipeline_transforms.AppendBUI.register_full_backward_hook</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_load_state_dict_post_hook.html">urbanlc.model.pipeline_transforms.AppendBUI.register_load_state_dict_post_hook</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_module.html">urbanlc.model.pipeline_transforms.AppendBUI.register_module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.register_parameter.html">urbanlc.model.pipeline_transforms.AppendBUI.register_parameter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.requires_grad_.html">urbanlc.model.pipeline_transforms.AppendBUI.requires_grad_</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.set_extra_state.html">urbanlc.model.pipeline_transforms.AppendBUI.set_extra_state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.set_rng_device_and_dtype.html">urbanlc.model.pipeline_transforms.AppendBUI.set_rng_device_and_dtype</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.share_memory.html">urbanlc.model.pipeline_transforms.AppendBUI.share_memory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.state_dict.html">urbanlc.model.pipeline_transforms.AppendBUI.state_dict</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.to.html">urbanlc.model.pipeline_transforms.AppendBUI.to</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.to_empty.html">urbanlc.model.pipeline_transforms.AppendBUI.to_empty</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.train.html">urbanlc.model.pipeline_transforms.AppendBUI.train</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_boxes.html">urbanlc.model.pipeline_transforms.AppendBUI.transform_boxes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_classes.html">urbanlc.model.pipeline_transforms.AppendBUI.transform_classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_inputs.html">urbanlc.model.pipeline_transforms.AppendBUI.transform_inputs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_keypoints.html">urbanlc.model.pipeline_transforms.AppendBUI.transform_keypoints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_masks.html">urbanlc.model.pipeline_transforms.AppendBUI.transform_masks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_output_tensor.html">urbanlc.model.pipeline_transforms.AppendBUI.transform_output_tensor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.transform_tensor.html">urbanlc.model.pipeline_transforms.AppendBUI.transform_tensor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.type.html">urbanlc.model.pipeline_transforms.AppendBUI.type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.validate_tensor.html">urbanlc.model.pipeline_transforms.AppendBUI.validate_tensor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.xpu.html">urbanlc.model.pipeline_transforms.AppendBUI.xpu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.AppendBUI.zero_grad.html">urbanlc.model.pipeline_transforms.AppendBUI.zero_grad</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.pipeline_transforms.LandsatTransformer.html">urbanlc.model.pipeline_transforms.LandsatTransformer</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.LandsatTransformer.calculate_statistics.html">urbanlc.model.pipeline_transforms.LandsatTransformer.calculate_statistics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.LandsatTransformer.transform.html">urbanlc.model.pipeline_transforms.LandsatTransformer.transform</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.pipeline_transforms.MSSTransformer.html">urbanlc.model.pipeline_transforms.MSSTransformer</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.MSSTransformer.calculate_statistics.html">urbanlc.model.pipeline_transforms.MSSTransformer.calculate_statistics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.MSSTransformer.transform.html">urbanlc.model.pipeline_transforms.MSSTransformer.transform</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.pipeline_transforms.TMTransformer.html">urbanlc.model.pipeline_transforms.TMTransformer</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.TMTransformer.calculate_statistics.html">urbanlc.model.pipeline_transforms.TMTransformer.calculate_statistics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.TMTransformer.transform.html">urbanlc.model.pipeline_transforms.TMTransformer.transform</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="urbanlc.model.pipeline_transforms.OLITIRSTransformer.html">urbanlc.model.pipeline_transforms.OLITIRSTransformer</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.OLITIRSTransformer.calculate_statistics.html">urbanlc.model.pipeline_transforms.OLITIRSTransformer.calculate_statistics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="urbanlc.model.pipeline_transforms.OLITIRSTransformer.transform.html">urbanlc.model.pipeline_transforms.OLITIRSTransformer.transform</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<p class="caption" role="heading"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.utils.html">urbanlc.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.downloader.base.html">urbanlc.downloader.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.downloader.esa2021_downloader.html">urbanlc.downloader.esa2021_downloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.downloader.landsat_downloader.html">urbanlc.downloader.landsat_downloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.analyze.metrics.html">urbanlc.analyze.metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.analyze.visualizer.html">urbanlc.analyze.visualizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.model.base.html">urbanlc.model.base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.model.baseline.html">urbanlc.model.baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.model.deep_learning.html">urbanlc.model.deep_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.model.download.html">urbanlc.model.download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.model.train_utils.html">urbanlc.model.train_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.model.dataloader.html">urbanlc.model.dataloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urbanlc.model.pipeline_transforms.html">urbanlc.model.pipeline_transforms</a></li>
 </ul>
 
 </div>
@@ -602,26 +239,8 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="urbanlc.model.baseline.BaselineLCC.save_model.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">urbanlc.model.baseline.BaselineLCC.save_model</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="urbanlc.model.baseline.BaselineLCC.load_model.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">urbanlc.model.baseline.BaselineLCC.load_model</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
