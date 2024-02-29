@@ -14,6 +14,7 @@ from typing import Optional, Union, Dict, Tuple, Any
 from torchvision.datasets.utils import download_file_from_google_drive
 import os
 import yaml
+import shutil
 from huggingface_hub import snapshot_download
 
 REPO_ID = "sincostanx/urbanlc"
@@ -38,7 +39,14 @@ def download_model_and_config(model_id: str) -> Tuple[str, Dict[str, Any]]:
     model_path = os.path.join(root, model_name)
     config_path = os.path.join(root, config_name)
     if (not os.path.isfile(model_path)) or (not os.path.isfile(config_path)):
-        snapshot_download(repo_id=REPO_ID, local_dir=root)
+        snapshot_download(repo_id=REPO_ID, local_dir=root, force_download=True)
+
+    # check files
+    paths = glob.glob(os.path.join(root, "*"))
+    for path in paths:
+        if ".yaml" in Path(path).name:
+            shutil.copy(path, Path(path).with_suffix(".yml"))
+            os.remove(path)
 
     # extract necessary parameters from config file
     with open(config_path, "r") as f:
