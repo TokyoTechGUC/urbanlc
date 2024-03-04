@@ -5,8 +5,7 @@
 
 The official implementation of **Annual Past-Present Land Cover Classification from Landsat using Deep Learning for Urban Agglomerations** (2024).
 
-**UrbanLC** is a Python library for land cover classification (LCC) from Landsat Images. It features pretrained deep learning models, which are compatible with all Landsat sensors up-to-date: MSS, TM, and OLI-TIRS. 
-<!-- Documentation is availiable here. -->
+**UrbanLC** is a Python library for land cover classification (LCC) from Landsat Images. It features pretrained deep learning models, which are compatible with all Landsat sensors up-to-date: MSS, TM, and OLI-TIRS. Documentation is availiable [installation guide](https://tokyotechguc.github.io/urbanlc/).
 
 ## Installation
 
@@ -41,4 +40,15 @@ The code and pretrained models are licensed under MIT License. See [`LICENSE.txt
 
 ## Citation
 
-TBU
+```
+@article{chinchuthakun2024annual,
+    title={ANNUAL PAST-PRESENT LAND COVER CLASSIFICATION FROM LANDSAT USING DEEP LEARNING FOR URBAN AGGLOMERATIONS},
+    author={Worameth CHINCHUTHAKUN and David WINDERL and Alvin C.G. VARQUEZ and Yukihiko YAMASHITA and Manabu KANDA},
+    journal={Journal of JSCE},
+    volume={12},
+    number={2},
+    pages={23-16151},
+    year={2024},
+    doi={10.2208/journalofjsce.23-16151}
+}
+```

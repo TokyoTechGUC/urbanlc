@@ -6,7 +6,20 @@ If you find this work/code useful in your research, please consider citing:
 ====================================
 UrbanLC
 ====================================
-**PLACEHOLDER**.
+
+.. code-block:: bibtex
+
+    @article{chinchuthakun2024annual,
+        title={ANNUAL PAST-PRESENT LAND COVER CLASSIFICATION FROM LANDSAT USING DEEP LEARNING FOR URBAN AGGLOMERATIONS},
+        author={Worameth CHINCHUTHAKUN and David WINDERL and Alvin C.G. VARQUEZ and Yukihiko YAMASHITA and Manabu KANDA},
+        journal={Journal of JSCE},
+        volume={12},
+        number={2},
+        pages={23-16151},
+        year={2024},
+        doi={10.2208/journalofjsce.23-16151}
+    }
+
 
 ====================================
 Other related citations
